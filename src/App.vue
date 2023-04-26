@@ -55,7 +55,7 @@ import { RouterLink, RouterView } from "vue-router";
       </div>
     </div>
   </nav>
-  <main class="flex px-10 py-10 items-center space-x-9">
+  <main class="flex px-10 py-10 items-center justify-between">
     <a href="#"
       ><img
         src="https://olcha.uz/_nuxt/logo-red.e48e0ab8.svg"
@@ -63,62 +63,66 @@ import { RouterLink, RouterView } from "vue-router";
         width="102"
         height="30"
     /></a>
-    <button
-      class="border-2 rounded-lgatalog py-2 px-5 rounded-lg hover:text-red-600 hover:border-red-600 text-[20px] flex items-center gap-2"
-    >
-      <i class="bi bi-list text-[23px]"></i>{{ katalog }}
-    </button>
-    <div>
-      <input
-        type="text"
-        placeholder="search"
-        class="py-3 px-5 rounded-lg w-[590px] bg-slate-100 focus:bg-white"
-      />
+    <div class="flex items-center space-x-10">
       <button
-        class="px-5 py-2 border rounded-lg bg-red-600 text-white ms-[-66px]"
+        class="border-2 rounded-lgatalog py-2 px-5 rounded-lg hover:text-red-600 hover:border-red-600 text-[20px] flex items-center gap-2"
       >
-        <i class="bi bi-search"></i>
+        <i class="bi bi-list text-[23px]"></i>{{ katalog }}
       </button>
+      <div>
+        <input
+          type="text"
+          placeholder="search"
+          class="py-3 px-5 rounded-lg w-[590px] bg-slate-100 focus:bg-white"
+        />
+        <button
+          class="px-5 py-2 border rounded-lg bg-red-600 text-white ms-[-66px]"
+        >
+          <i class="bi bi-search"></i>
+        </button>
+      </div>
     </div>
-    <RouterLink
-      to="/taqqoslash"
-      href="#"
-      class="hover:text-red-600 items-center flex"
-      style="flex-direction: column"
-    >
-      <i class="bi bi-text-left text-[24px]"></i>
-      <p class="text-[14px]">{{ taqqoslash }}</p>
-    </RouterLink>
-    <RouterLink
-      to="/sevimlilar"
-      href="#"
-      class="hover:text-red-600 items-center flex"
-      style="flex-direction: column"
-    >
-      <i class="bi bi-heart text-[24px]"></i>
-      <p class="text-[14px]">{{ sevimlilar }}</p>
-    </RouterLink>
-    <RouterLink
-      to="savatcha"
-      href="#"
-      class="hover:text-red-600 items-center flex"
-      style="flex-direction: column"
-    >
-      <span
-        class="w-[15px] h-[15px] bg-red-600 rounded-full flex justify-center items-center text-[12px] mb-[-18px] ms-[15px] text-white z-10"
-        >0</span
+    <div class="space-x-7 flex">
+      <RouterLink
+        to="/taqqoslash"
+        href="#"
+        class="hover:text-red-600 items-center flex"
+        style="flex-direction: column"
       >
-      <i class="bi bi-cart text-[24px]"></i>
-      <p class="text-[14px]">{{ savatcha }}</p>
-    </RouterLink>
-    <a
-      href="#"
-      class="hover:text-red-600 items-center flex"
-      style="flex-direction: column"
-    >
-      <i class="bi bi-person text-[24px]"></i>
-      <p class="text-[14px]">{{ kirish }}</p>
-    </a>
+        <i class="bi bi-text-left text-[24px]"></i>
+        <p class="text-[14px]">{{ taqqoslash }}</p>
+      </RouterLink>
+      <RouterLink
+        to="/sevimlilar"
+        href="#"
+        class="hover:text-red-600 items-center flex"
+        style="flex-direction: column"
+      >
+        <i class="bi bi-heart text-[24px]"></i>
+        <p class="text-[14px]">{{ sevimlilar }}</p>
+      </RouterLink>
+      <RouterLink
+        to="savatcha"
+        href="#"
+        class="hover:text-red-600 items-center flex"
+        style="flex-direction: column"
+      >
+        <span
+          class="w-[15px] h-[15px] bg-red-600 rounded-full flex justify-center items-center text-[12px] mb-[-18px] ms-[15px] text-white z-10"
+          >0</span
+        >
+        <i class="bi bi-cart text-[24px]"></i>
+        <p class="text-[14px]">{{ savatcha }}</p>
+      </RouterLink>
+      <a
+        href="#"
+        class="hover:text-red-600 items-center flex"
+        style="flex-direction: column"
+      >
+        <i class="bi bi-person text-[24px]"></i>
+        <p class="text-[14px]">{{ kirish }}</p>
+      </a>
+    </div>
   </main>
   <RouterView />
 </template>
