@@ -192,6 +192,55 @@
       {{ asosiySahifa }}
     </button>
   </div>
+  <div
+    class="h-[297px] w-[100%] bg-neutral-100 mb-20 flex items-center justify-around"
+  >
+    <div class="w-[479px]">
+      <h2 class="text-2xl font-bold">{{ bizningMobilIlova }}</h2>
+      <div class="flex-wrap flex mt-5">
+        <div
+          class="m-2 ml-0 bg-green-500 w-[185px] h-[55px] flex items-center justify-center hover:bg-neutral-400 bg-white rounded-lg"
+        >
+          <a href="#">
+            <img
+              class="w-[150px] h-[50px]"
+              src="https://olcha.uz/_nuxt/appstore.32a5f67a.svg"
+              alt="olcha app story"
+            />
+          </a>
+        </div>
+        <div
+          class="m-2 mr-0 bg-green-500 w-[185px] h-[55px] flex items-center justify-center hover:bg-neutral-400 bg-white rounded-lg"
+        >
+          <a href="#">
+            <img
+              class="w-[150px] h-[50px]"
+              src="https://olcha.uz/_nuxt/googleplay.4ba35be8.svg"
+              alt="olcha app story"
+            />
+          </a>
+        </div>
+        <div
+          class="m-2 ml-0 bg-green-500 w-[185px] h-[55px] flex items-center justify-center hover:bg-neutral-400 bg-white rounded-lg"
+        >
+          <a href="#">
+            <img
+              class="w-[150px] h-[50px]"
+              src="https://olcha.uz/_nuxt/app-gallery.879faacf.svg"
+              alt="olcha app story"
+            />
+          </a>
+        </div>
+      </div>
+    </div>
+    <div>
+      <img
+        src="//olcha.uz/_nuxt/footer-img.97b6859b.png"
+        alt="saasas"
+        class="w-[489px] h-[264px]"
+      />
+    </div>
+  </div>
 </template>
 <script>
 export default {
@@ -226,6 +275,8 @@ export default {
       akk: false,
       ogoh: false,
       number: "",
+      bizningMobilIlova:
+        "Bizning mobil ilovamiz AppGallery, App store va Google play-da",
     };
   },
 
@@ -237,7 +288,7 @@ export default {
       this.numberThero = false;
     },
     sevimlilarClick() {
-      goh: true, (this.numberOne = false);
+      this.numberOne = false;
       this.numberTwo = true;
       this.numberThera = false;
       this.numberThero = false;
@@ -263,6 +314,8 @@ export default {
       }
     },
     ozbekLotin() {
+      this.bizningMobilIlova =
+        "Bizning mobil ilovamiz AppGallery, App store va Google play-da";
       this.mudatliTolov = "0% Muddatli to'lov";
       this.chegirmalar = "Chegirmalar";
       this.yutuqliOyinlar = "submitYutuqli o'yinlar";
@@ -310,6 +363,8 @@ export default {
       this.telefonRaqam = "Телефон рақами:";
       this.tasdiqlash = "Тасдиқлаш";
       this.ogohlantiruvchi = "Телефон рақами майдони тўлдирилиши керак";
+      this.bizningMobilIlova =
+        "Бизнинг мобил иловамиз AppGallery, App store ва Google play-да";
     },
     krilrus() {
       this.mudatliTolov = "0% Рассрочка";
@@ -334,6 +389,8 @@ export default {
       this.telefonRaqam = "Номер телефона:";
       this.tasdiqlash = "Подтвердить";
       this.ogohlantiruvchi = "Поле номер телефона обязательно для заполнения";
+      this.bizningMobilIlova =
+        "Наше мобильное приложение доступно в AppGallery, App store и Google play";
     },
   },
 };
