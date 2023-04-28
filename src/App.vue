@@ -1,7 +1,3 @@
-<script setup>
-import { RouterLink, RouterView } from "vue-router";
-</script>
-
 <template>
   <nav
     class="flex items-center py-3 w-full bg-red-600 justify-between px-[24px]"
@@ -83,26 +79,26 @@ import { RouterLink, RouterView } from "vue-router";
       </div>
     </div>
     <div class="space-x-7 flex">
-      <RouterLink
-        to="/taqqoslash"
+      <a
+        @click="taqqoslashClick"
         href="#"
         class="hover:text-red-600 items-center flex"
         style="flex-direction: column"
       >
         <i class="bi bi-text-left text-[24px]"></i>
         <p class="text-[14px]">{{ taqqoslash }}</p>
-      </RouterLink>
-      <RouterLink
-        to="/sevimlilar"
+      </a>
+      <a
+        @click="sevimlilarClick"
         href="#"
         class="hover:text-red-600 items-center flex"
         style="flex-direction: column"
       >
         <i class="bi bi-heart text-[24px]"></i>
         <p class="text-[14px]">{{ sevimlilar }}</p>
-      </RouterLink>
-      <RouterLink
-        to="savatcha"
+      </a>
+      <a
+        @click="savatchaClick"
         href="#"
         class="hover:text-red-600 items-center flex"
         style="flex-direction: column"
@@ -113,8 +109,43 @@ import { RouterLink, RouterView } from "vue-router";
         >
         <i class="bi bi-cart text-[24px]"></i>
         <p class="text-[14px]">{{ savatcha }}</p>
-      </RouterLink>
+      </a>
+      <div
+        v-if="akk"
+        class="w-[370px] py-7 border bg-white rounded-lg right-[50px] top-[27%] shadow-lg flex justify-start px-7 items-center"
+        style="position: absolute; flex-direction: column"
+      >
+        <div class="flex justify-end" style="width: 100%">
+          <button @click="orqaga">
+            <i class="bi bi-x-lg"></i>
+          </button>
+        </div>
+        <h1 class="text-2xl mt-3 mb-3">
+          {{ tizimgaKirishYokiProfilYaratish }}Tizimga kirish yoki profil
+          yaratish
+        </h1>
+        <label for="number" class="flex justify-start w-[100%]">{{
+          telefonRaqam
+        }}</label>
+        <input
+          id="number"
+          type="number"
+          placeholder="+998 (99) 999 9999"
+          class="border rounded-lg py-2 px-3 w-[100%] mt-2"
+          v-model="number"
+        />
+        <p class="text-red-500 text-[14px] mt-2" v-if="ogoh">
+          {{ ogohlantiruvchi }}
+        </p>
+        <button
+          @click="submib"
+          class="border-red-400 border-2 rounded-lg w-[100%] py-2 text-[18px] mt-5 text-white hover:text-red-400 bg-red-400 hover:bg-white"
+        >
+          {{ tasdiqlash }}
+        </button>
+      </div>
       <a
+        @click="akaunt"
         href="#"
         class="hover:text-red-600 items-center flex"
         style="flex-direction: column"
@@ -124,7 +155,43 @@ import { RouterLink, RouterView } from "vue-router";
       </a>
     </div>
   </main>
-  <RouterView />
+  <div v-if="numberThero" class="h-[400px]">
+    <h1 class="text-5xl font-bold">
+      {{ yutuqliOyinlar2 }}
+    </h1>
+  </div>
+  <div v-if="numberOne" class="h-[400px]">
+    <h1 class="text-5xl font-bold">
+      {{ tavarlarningSotilishi }}
+    </h1>
+  </div>
+  <div v-if="numberTwo" class="h-[400px]">
+    <h1 class="text-5xl font-bold">
+      {{ sevimliMahsulotlar }}
+    </h1>
+    <div class="flex items-center mt-12" style="flex-direction: column">
+      <img src="https://olcha.uz/_nuxt/empty-img.3a4aef3b.png" alt="mahsulot" />
+      <h2 class="text-4xl mt-3">{{ SevimliMahsulotlarYoq }}</h2>
+    </div>
+  </div>
+  <div
+    v-if="numberThera"
+    class="h-[400px] flex items-center justify-center"
+    style="flex-direction: column"
+  >
+    <i class="bi bi-cart-check-fill text-5xl"></i>
+
+    <h1 class="text-4xl mt-8">
+      {{ savatchangizBosh }}
+    </h1>
+
+    <h2 class="text-1xl mt-3">{{ LekinSizUniHarDoimToldirishingizMumkin }}</h2>
+    <button
+      class="border-2 border-red-600 py-[10px] px-[17px] rounded-lg mt-10 bg-red-600 text-white hover:bg-white hover:text-red-600"
+    >
+      {{ asosiySahifa }}
+    </button>
+  </div>
 </template>
 <script>
 export default {
@@ -140,13 +207,65 @@ export default {
       sevimlilar: "Sevimlilar",
       savatcha: "Savatcha",
       kirish: "Kirish",
+      sevimliMahsulotlar: "Sevimli mahsulotlar",
+      SevimliMahsulotlarYoq: "Sevimli mahsulotlar yo'q",
+      tavarlarningSotilishi: "Tavarlarni solishtirish",
+      savatchangizBosh: "Savatchangiz bo'sh",
+      LekinSizUniHarDoimToldirishingizMumkin:
+        "Lekin siz uni har doim to'ldirishingiz mumkin",
+      asosiySahifa: "Asosiy sahifa",
+      yutuqliOyinlar2: "Yutuqli o'yinlar",
+      tizimgaKirishYokiProfilYaratish: "Tizimga kirish yoki profil",
+      telefonRaqam: "Telefon raqam:",
+      tasdiqlash: "Tasdiqlash",
+      ogohlantiruvchi: "Telefon raqami maydoni majburiy, to'ldirishingiz lozim",
+      numberOne: false,
+      numberTwo: false,
+      numberThera: false,
+      numberThero: true,
+      akk: false,
+      ogoh: false,
+      number: "",
     };
   },
+
   methods: {
+    taqqoslashClick() {
+      this.numberOne = true;
+      this.numberTwo = false;
+      this.numberThera = false;
+      this.numberThero = false;
+    },
+    sevimlilarClick() {
+      goh: true, (this.numberOne = false);
+      this.numberTwo = true;
+      this.numberThera = false;
+      this.numberThero = false;
+    },
+    savatchaClick() {
+      this.numberOne = false;
+      this.numberTwo = false;
+      this.numberThera = true;
+      this.numberThero = false;
+    },
+    akaunt() {
+      this.akk = true;
+    },
+    orqaga() {
+      this.akk = false;
+    },
+    submib() {
+      if (this.number === "") {
+        this.ogoh = true;
+      } else {
+        this.ogoh = false;
+        this.akk = false;
+      }
+    },
     ozbekLotin() {
       this.mudatliTolov = "0% Muddatli to'lov";
       this.chegirmalar = "Chegirmalar";
-      this.yutuqliOyinlar = "Yutuqli o'yinlar";
+      this.yutuqliOyinlar = "submitYutuqli o'yinlar";
       this.satyHaritasi = "Sayt xaritasi";
       this.olchadaSoting = "Olcha da soting";
       this.katalog = " Katalog";
@@ -154,6 +273,19 @@ export default {
       this.sevimlilar = "Sevimlilar";
       this.savatcha = "Savatcha";
       this.kirish = "Kirish";
+      this.sevimliMahsulotlar = "Sevimli mahsulotlar";
+      this.SevimliMahsulotlarYoq = "Sevimli mahsulotlar yo'q";
+      this.tavarlarningSotilishi = "Tavarlarni solishtirish";
+      this.savatchangizBosh = "Savatchangiz bo'sh";
+      this.LekinSizUniHarDoimToldirishingizMumkin =
+        "Lekin siz uni har doim to'ldirishingiz mumkin";
+      this.asosiySahifa = "Asosiy sahifa";
+      this.yutuqliOyinlar2 = "Yutuqli o'yinlar";
+      this.tizimgaKirishYokiProfilYaratish = "Tizimga kirish yoki profil";
+      this.telefonRaqam = "Telefon raqam:";
+      this.tasdiqlash = "Tasdiqlash";
+      this.ogohlantiruvchi =
+        "Telefon raqami maydoni majburiy, to'ldirishingiz lozim";
     },
     krilLotin() {
       this.mudatliTolov = "0% Муддатли тўлов";
@@ -166,11 +298,24 @@ export default {
       this.sevimlilar = "Севимлилар";
       this.savatcha = "Саватча";
       this.kirish = "Кириш";
+      this.sevimliMahsulotlar = "Севимли маҳсулотлар";
+      this.SevimliMahsulotlarYoq = "Севимли маҳсулотлар йўқ";
+      this.tavarlarningSotilishi = "Товарларни солиштириш";
+      this.savatchangizBosh = "Саватчангиз бўш";
+      this.LekinSizUniHarDoimToldirishingizMumkin =
+        "Лекин сиз уни хар доим тўлдиришингиз мумкин";
+      this.asosiySahifa = "Асосий сақифага";
+      this.yutuqliOyinlar2 = "Ютуқли ўйинлар";
+      this.tizimgaKirishYokiProfilYaratish = "Тизимга кириш ёки профил яратиш";
+      this.telefonRaqam = "Телефон рақами:";
+      this.tasdiqlash = "Тасдиқлаш";
+      this.ogohlantiruvchi = "Телефон рақами майдони тўлдирилиши керак";
     },
     krilrus() {
       this.mudatliTolov = "0% Рассрочка";
       this.chegirmalar = "Скидки";
       this.yutuqliOyinlar = "Розыгрыши";
+      this.yutuqliOyinlar2 = "Розыгрыши";
       this.satyHaritasi = "Карта сайта";
       this.olchadaSoting = "Продавайте на olcha";
       this.katalog = " Каталог";
@@ -178,6 +323,17 @@ export default {
       this.sevimlilar = "Избранные";
       this.savatcha = "Корзина";
       this.kirish = "Войти";
+      this.sevimliMahsulotlar = "Избранные товары";
+      this.SevimliMahsulotlarYoq = "Нет избранных товаров";
+      this.tavarlarningSotilishi = "Сравнение товаров";
+      this.savatchangizBosh = "Корзина пуста";
+      this.LekinSizUniHarDoimToldirishingizMumkin =
+        "Но вы всегда можете ее наполнить";
+      this.asosiySahifa = "На главную";
+      this.tizimgaKirishYokiProfilYaratish = "Войти или создать профиль";
+      this.telefonRaqam = "Номер телефона:";
+      this.tasdiqlash = "Подтвердить";
+      this.ogohlantiruvchi = "Поле номер телефона обязательно для заполнения";
     },
   },
 };
