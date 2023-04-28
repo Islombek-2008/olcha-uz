@@ -155,7 +155,7 @@
       </a>
     </div>
   </main>
-  <div v-if="numberThero" class="h-[400px]">
+  <div v-if="numberThero" class="h-[100px]">
     <h1 class="text-5xl font-bold">
       {{ yutuqliOyinlar2 }}
     </h1>
