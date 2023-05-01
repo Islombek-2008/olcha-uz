@@ -241,6 +241,29 @@
       />
     </div>
   </div>
+  <footer class="footer mb-5">
+    <div class="border flex">
+      <div>
+        <a href="#"
+          ><img
+            src="https://olcha.uz/_nuxt/logo-red.e48e0ab8.svg"
+            alt="olcha.uz"
+            width="102"
+            height="30"
+        /></a>
+        <p>{{ qollabQuvvatlashRaqami }} Qo'llab-quvvatlash raqami</p>
+        <a
+          class="text-2xl font-bold hover:text-red-500"
+          href="tel:+998712022021"
+          aria-label="+998712022021"
+        >
+          +998 (71) 202 2021
+        </a>
+        <p><i class="bi bi-geo-alt-fill"></i> Qozitarnov, Toshkent</p>
+        <a href="#"><i class="bi bi-envelope"></i> info@olcha.uz</a>
+      </div>
+    </div>
+  </footer>
 </template>
 <script>
 export default {
