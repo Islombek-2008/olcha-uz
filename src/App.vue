@@ -262,6 +262,36 @@
         <p><i class="bi bi-geo-alt-fill"></i> Qozitarnov, Toshkent</p>
         <a href="#"><i class="bi bi-envelope"></i> info@olcha.uz</a>
       </div>
+      <div>
+        <h2>{{ malumot }} Ma'lumot</h2>
+        <div>
+          <div>
+            <a href="#">{{ bizHaqimizda }} Biz haqomizda</a>
+            <a href="#">{{ boshIshOrinlari }} Bo'sh ish o'rinlari </a>
+            <a href="#"
+              >{{ tavarlarniQaytarishVaTavarlarniAlmashtirish }} To‘lovni
+              qaytarish va tovarlarni almashtirish
+            </a>
+            <a href="#"
+              >{{ mudatliTolovShartlari }} Muddatli to'lov shartlari
+            </a>
+            <a href="#">{{ yordam }} Yordam </a>
+            <a href="#">{{ yetkazibBerish }} Yetkazib berish </a>
+          </div>
+          <div>
+            <a href="#">{{ ekoFriendly }} Eco-friendly</a>
+            <a href="#">{{ bonusVaAksiyalar }} Bonus va aksiyalar</a>
+            <a href="#"
+              >{{ tolovVaYetkazibBerish }} To'lov va yetkazib berish</a
+            >
+            <a href="#">{{ OlchaSoting }} olcha da soting</a>
+            <a href="#">{{ servisMarkazlari }} Servis markazlari</a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <img src="http://www.w3.org/2000/svg" alt="">
+      </div>
     </div>
   </footer>
 </template>
