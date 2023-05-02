@@ -289,8 +289,37 @@
           </div>
         </div>
       </div>
-      <div>
-        <img src="http://www.w3.org/2000/svg" alt="">
+      <div class="flex flex-wrap">
+        <img
+          src="./components/apelsin.svg"
+          alt="salom"
+          class="w-[70px] h-[50px]"
+        />
+        <img
+          src="./components/uzcard.svg"
+          alt="uzcard"
+          class="w-[70px] h-[50px]"
+        />
+        <img
+          src="./components/click.svg"
+          alt="click"
+          class="w-[70px] h-[50px]"
+        />
+        <img
+          src="./components/payme.svg"
+          alt="payme"
+          class="w-[70px] h-[50px]"
+        />
+         <img
+          src="./components/humo.svg"
+          alt="humo"
+          class="w-[70px] h-[50px]"
+        />
+        <img
+          src="./components/paynet.svg"
+          alt="humo"
+          class="w-[70px] h-[50px]"
+        />
       </div>
     </div>
   </footer>
