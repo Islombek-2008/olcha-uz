@@ -241,7 +241,7 @@
       />
     </div>
   </div>
-  <footer class="footer mb-20">
+  <footer class="footer">
     <div
       class="border flex space-x-20 px-7 justify-between bg-neutral-100 py-[50px]"
     >
@@ -254,7 +254,7 @@
             height="30"
         /></a>
         <div class="space-y-3 flex flex-col mt-7">
-          <p>{{ qollabQuvvatlashRaqami }} </p>
+          <p>{{ qollabQuvvatlashRaqami }}</p>
           <a
             class="text-2xl font-bold hover:text-red-500"
             href="tel:+998712022021"
@@ -263,7 +263,9 @@
             +998 (71) 202 2021
           </a>
           <p><i class="bi bi-geo-alt-fill text-red-500"></i> {{ manzil }}</p>
-          <a href="#" class="hover:text-red-600"><i class="bi bi-envelope"></i> info@olcha.uz</a>
+          <a href="#" class="hover:text-red-600"
+            ><i class="bi bi-envelope"></i> info@olcha.uz</a
+          >
         </div>
       </div>
       <div>
@@ -272,39 +274,25 @@
         </h2>
         <div class="flex space-x-[50px]">
           <div class="space-y-3 flex flex-col">
+            <a href="#" class="hover:text-gray-500">{{ bizHaqimizda }} </a>
+            <a href="#" class="hover:text-gray-500">{{ boshIshOrinlari }} </a>
             <a href="#" class="hover:text-gray-500"
-              >{{ bizHaqimizda }} </a
-            >
-            <a href="#" class="hover:text-gray-500"
-              >{{ boshIshOrinlari }} 
+              >{{ tavarlarniQaytarishVaTavarlarniAlmashtirish }}
             </a>
             <a href="#" class="hover:text-gray-500"
-              >{{ tavarlarniQaytarishVaTavarlarniAlmashtirish }} 
+              >{{ mudatliTolovShartlari }}
             </a>
-            <a href="#" class="hover:text-gray-500"
-              >{{ mudatliTolovShartlari }} 
-            </a>
-            <a href="#" class="hover:text-gray-500">{{ yordam }}  </a>
-            <a href="#" class="hover:text-gray-500"
-              >{{ yetkazibBerish }} 
-            </a>
+            <a href="#" class="hover:text-gray-500">{{ yordam }} </a>
+            <a href="#" class="hover:text-gray-500">{{ yetkazibBerish }} </a>
           </div>
           <div class="space-y-3 flex flex-col">
+            <a href="#" class="hover:text-gray-500">{{ ekoFriendly }} </a>
+            <a href="#" class="hover:text-gray-500">{{ bonusVaAksiyalar }} </a>
             <a href="#" class="hover:text-gray-500"
-              >{{ ekoFriendly }} </a
-            >
-            <a href="#" class="hover:text-gray-500"
-              >{{ bonusVaAksiyalar }} </a
-            >
-            <a href="#" class="hover:text-gray-500"
-              >{{ tolovVaYetkazibBerish }} </a
-            >
-            <a href="# " class="bg-red-600 text-white"
-              >{{ OlchaSoting }} </a
-            >
-            <a href="# " class="hover:text-gray-500"
-              >{{ servisMarkazlari }} </a
-            >
+              >{{ tolovVaYetkazibBerish }}
+            </a>
+            <a href="# " class="bg-red-600 text-white">{{ OlchaSoting }} </a>
+            <a href="# " class="hover:text-gray-500">{{ servisMarkazlari }} </a>
           </div>
         </div>
       </div>
@@ -366,24 +354,47 @@
       </div>
     </div>
   </footer>
+  <div class="flex w-[100%] py-8 px-20 justify-between bg-neutral-100">
+    <div class="flex space-x-20">
+      <p class="text-gray-500">© 2017-2023. 000 "Olcha store"</p>
+      <a href="#" class="text-gray-500 hover:text-red-600">{{ omaviyOfera }}</a>
+      <a href="#" class="text-gray-500 hover:text-red-600">{{
+        maxfiylikSiyosati
+      }}</a>
+    </div>
+    <div class="flex space-x-5">
+      <a href="#" class="text-gray-500 hover:text-red-600"
+        ><i class="bi bi-facebook text-[25px]"></i
+      ></a>
+      <a href="#" class="text-gray-500 hover:text-red-600"
+        ><i class="bi bi-instagram text-[25px]"></i
+      ></a>
+      <a href="#" class="text-gray-500 hover:text-red-600"
+        ><i class="bi bi-telegram text-[25px]"></i
+      ></a>
+    </div>
+  </div>
 </template>
 <script>
 export default {
   data() {
     return {
-      servisMarkazlari:"Servis markazlari",
-      OlchaSoting :"olcha da soting",
-      tolovVaYetkazibBerish:"To'lov va yetkazib berish",
-      bonusVaAksiyalar:"Bonus va aksiyalar",
-      ekoFriendly:"Eco-friendly",
-      yetkazibBerish:"Yetkazib berish",
-      yordam:"Yordam",
-      mudatliTolovShartlari:"Muddatli to'lov shartlari",
-      tavarlarniQaytarishVaTavarlarniAlmashtirish:"To'lovni qaytarish va tovarlarni almashtirish",
-      boshIshOrinlari:"Bo'sh ish o'rinlari",
-      bizHaqimizda:"Biz haqimizda",
-      malumot:"Ma'lumot",
-      manzil:"Qozitarnov, Toshkent",
+      maxfiylikSiyosati: "Maxviylik siyosati",
+      omaviyOfera: "Ommaviy oferta",
+      servisMarkazlari: "Servis markazlari",
+      OlchaSoting: "olcha da soting",
+      tolovVaYetkazibBerish: "To'lov va yetkazib berish",
+      bonusVaAksiyalar: "Bonus va aksiyalar",
+      ekoFriendly: "Eco-friendly",
+      yetkazibBerish: "Yetkazib berish",
+      yordam: "Yordam",
+      mudatliTolovShartlari: "Muddatli to'lov shartlari",
+      tavarlarniQaytarishVaTavarlarniAlmashtirish:
+        "To'lovni qaytarish va tovarlarni almashtirish",
+      boshIshOrinlari: "Bo'sh ish o'rinlari",
+      bizHaqimizda: "Biz haqimizda",
+      malumot: "Ma'lumot",
+      manzil: "Qozitarnov, Toshkent",
       qollabQuvvatlashRaqami: "Qo'llab-quvvatlash raqami",
       mudatliTolov: "0% Muddatli to'lov",
       chegirmalar: "Chegirmalar",
@@ -453,21 +464,23 @@ export default {
       }
     },
     ozbekLotin() {
+      this.maxfiylikSiyosati = "Maxfiylik siyosati";
+      this.omaviyOfera = "Ommaviy oferta";
       this.qollabQuvvatlashRaqami = "Qo'llab-quvvatlash raqami";
       this.manzil = "Qozitarnov, Toshkent";
       this.malumot = "Ma'lumot";
       this.bizHaqimizda = "Biz haqimizda";
-       this.boshIshOrinlari = "Bo'sh ish o'rinlari";
-      this.tavarlarniQaytarishVaTavarlarniAlmashtirish = "To'lovni qaytarish va tovarlarni almashtirish";
+      this.boshIshOrinlari = "Bo'sh ish o'rinlari";
+      this.tavarlarniQaytarishVaTavarlarniAlmashtirish =
+        "To'lovni qaytarish va tovarlarni almashtirish";
       this.mudatliTolovShartlari = "Muddatli to'lov shartlari";
       this.yordam = "Yordam";
       this.yetkazibBerish = "Yetkazib berish";
       this.bonusVaAksiyalar = "Bonus va aksiyalar";
       this.tolovVaYetkazibBerish = "To'lov va yetkazib berish";
       this.OlchaSoting = "olcha da soting";
-      this.servisMarkazlari ="Servis markazlari";
-     
-       this.bizningMobilIlova =
+      this.servisMarkazlari = "Servis markazlari";
+      this.bizningMobilIlova =
         "Bizning mobil ilovamiz AppGallery, App store va Google play-da";
       this.mudatliTolov = "0% Muddatli to'lov";
       this.chegirmalar = "Chegirmalar";
@@ -494,12 +507,15 @@ export default {
         "Telefon raqami maydoni majburiy, to'ldirishingiz lozim";
     },
     krilLotin() {
+      this.maxfiylikSiyosati = "Махфийлик сиёсати";
+      this.omaviyOfera = "Оммавий оферта";
       this.qollabQuvvatlashRaqami = "Қўллаб-қувватлаш рақами";
       this.manzil = "Қозитарнов, Тошкент";
       this.malumot = "Маълумот";
       this.bizHaqimizda = "Биз ҳақимизда";
       this.boshIshOrinlari = "Бўш иш ўринлари";
-      this.tavarlarniQaytarishVaTavarlarniAlmashtirish = "Маҳсулотларини қайтариш ва алмаштириш";
+      this.tavarlarniQaytarishVaTavarlarniAlmashtirish =
+        "Маҳсулотларини қайтариш ва алмаштириш";
       this.mudatliTolovShartlari = "Муддатли тўлов";
       this.yordam = "Ёрдам";
       this.yetkazibBerish = "Етказиб бериш";
@@ -507,7 +523,6 @@ export default {
       this.tolovVaYetkazibBerish = "Тўлов ва етказиб бериш";
       this.OlchaSoting = "olcha да сотинг";
       this.servisMarkazlari = "Сервис марказлари";
-
       this.mudatliTolov = "0% Муддатли тўлов";
       this.chegirmalar = "Чегирмалар";
       this.yutuqliOyinlar = "Ютуқли ўйинлар";
@@ -534,12 +549,15 @@ export default {
         "Бизнинг мобил иловамиз AppGallery, App store ва Google play-да";
     },
     krilrus() {
+      this.maxfiylikSiyosati = "Политика конфиденциальности";
+      this.omaviyOfera = "Публичная оферта";
       this.qollabQuvvatlashRaqami = "Телефон поддержки";
       this.manzil = "Козитарнов, Ташкент";
       this.malumot = "Информация";
       this.bizHaqimizda = "О компании";
       this.boshIshOrinlari = "Вакансии";
-      this.tavarlarniQaytarishVaTavarlarniAlmashtirish = "Возврат и обмен товаров";
+      this.tavarlarniQaytarishVaTavarlarniAlmashtirish =
+        "Возврат и обмен товаров";
       this.mudatliTolovShartlari = "Условия рассрочки";
       this.yordam = "Помощь";
       this.yetkazibBerish = "Доставка";
